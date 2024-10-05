@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 import psycopg2
 
@@ -13,6 +14,10 @@ def get_db_connection():
         port="21288"
     )
     return conn
+
+@app.route('/')
+def home():
+    return jsonify({"message": "Hello, World Engineer!"})   
 
 @app.route('/insert', methods=['POST'])
 def insert_data():
