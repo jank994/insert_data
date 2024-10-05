@@ -14,6 +14,10 @@ def get_db_connection():
     )
     return conn
 
+@app.route('/')
+def home():
+    return jsonify({"message": "Hello, World Engineer!"})   
+
 @app.route('/insert', methods=['POST'])
 def insert_data():
     data = request.json
