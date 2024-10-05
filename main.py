@@ -28,7 +28,7 @@ class MyApp(App):
         age = self.age_input.text
         data = {'name': name, 'surname': surname, 'age': age}
 
-        response = requests.post('http://your_flask_api_url/insert', json=data)
+        response = requests.post('https://insert-data.vercel.app/insert', json=data)
         print(response.json())
 
 if __name__ == '__main__':
